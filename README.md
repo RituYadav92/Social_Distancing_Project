@@ -6,10 +6,10 @@
 ### 3. Run the code using following command
 ```python social_distance_detector.py --input pedestrians.mp4 --output output.avi```
 
-### If X server error then 
+### 4. If X server error then 
 
 #### prevent any future commands in this session from connecting to your real X environment
-unset DISPLAY XAUTHORITY
+```unset DISPLAY XAUTHORITY```
 
 #### run yourcode.py with a fake X environment provided by xvfb-run
-xvfb-run python yourcode.py
+```xvfb-run python yourcode.py```
