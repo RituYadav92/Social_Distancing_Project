@@ -30,7 +30,8 @@ def detect_people(frame, net, ln, personIdx=0):
 				y = int(centerY - (height / 2))
 
 				boxes.append([x, y, int(width), int(height)])
-				centroids.append((centerX, y))
+# 				centroids.append((centerX, centerY))
+				centroids.append((centerX, int(centerY + (height / 2))))				
 				confidences.append(float(confidence))
 
 	idxs = cv2.dnn.NMSBoxes(boxes, confidences, MIN_CONF, NMS_THRESH)
