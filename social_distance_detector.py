@@ -1,4 +1,3 @@
-# USAGE
 from distance_detection import social_distancing_config as config
 from distance_detection.detection import detect_people
 from scipy.spatial import distance as dist
@@ -10,7 +9,6 @@ import os
 
 os.putenv('DISPLAY', ':0.0')
 
-# construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--input", type=str, default="",
     help="path to input video file")
@@ -23,7 +21,6 @@ args = vars(ap.parse_args())
 labelsPath = os.path.sep.join([config.MODEL_PATH, "coco.names"])
 LABELS = open(labelsPath).read().strip().split("\n")
 
-# derive the paths to the YOLO weights and model configuration
 weightsPath = os.path.sep.join([config.MODEL_PATH, "yolov3.weights"])
 configPath = os.path.sep.join([config.MODEL_PATH, "yolov3.cfg"])
 
@@ -65,7 +62,6 @@ while True:
         centroids = np.array([r[2] for r in results])
         D = dist.cdist(centroids, centroids, metric="euclidean")
 
-        # loop over the upper triangular of the distance matrix
         for i in range(0, D.shape[0]):
             for j in range(i + 1, D.shape[1]):
                 if D[i, j] < config.MIN_DISTANCE:
@@ -97,8 +93,7 @@ while True:
         if key == ord("q"):
             break
 
-    if args["output"] != "" and writer is None:
-        # initialize our video writer
+    if args["output"] != "" and writer is None:        
         fourcc = cv2.VideoWriter_fourcc(*"MJPG")
         writer = cv2.VideoWriter(args["output"], fourcc, 25,
             (frame.shape[1], frame.shape[0]), True)
