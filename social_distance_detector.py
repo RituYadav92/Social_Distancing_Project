@@ -82,7 +82,7 @@ while True:
             color = (0, 0, 255)
 
         cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
-        cv2.circle(frame, (cX, cY), 5, color, 1)
+        cv2.circle(frame, (cX, cY), 50, color, 1)
 
     text = "Number of Social Distancing Violations: {}".format(len(violate))
     cv2.putText(frame, text, (10, frame.shape[0] - 25),
