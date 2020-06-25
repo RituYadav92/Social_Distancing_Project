@@ -1,8 +1,8 @@
 # Social_Distancing_Project
+Detect objects and check cases of social distancing violation.
+Demo:
 
 ![.](Output_Demo1.gif) 
-
-<img src="https://github.com/RituYadav92/Social_Distancing_Project/Output_Demo1.gif">
 
 ### 1. Run .yml file to create the enviornment for this project.
 ```conda env create -f environment.yml```
