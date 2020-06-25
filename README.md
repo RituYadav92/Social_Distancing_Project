@@ -1,7 +1,7 @@
 # Social_Distancing_Project
 Detect objects and check cases of social distancing violation.
 
-####Demo:
+#### Demo:
 
 ![.](Output_Demo1.gif) 
 
